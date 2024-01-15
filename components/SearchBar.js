@@ -2,6 +2,8 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 
+import { Link } from '@react-navigation/native'
+
 
 const SearchBar = () => {
   return (

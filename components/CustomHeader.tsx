@@ -1,17 +1,26 @@
 import { StyleSheet, Text,Image, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useRef } from 'react'
 import { Ionicons } from '@expo/vector-icons'
+import CustomBottomSheetModal from './CustomBottomSheetModal'
+import { BottomSheetModal } from '@gorhom/bottom-sheet'
+
 
 const CustomHeader = () => {
+  const bottomsheetRef=useRef<BottomSheetModal>(null);
+  const openModal=()=>{
+    bottomsheetRef.current?.present();
+
+  }
   return (
     <View style={styles.nav}>
+    <CustomBottomSheetModal ref={bottomsheetRef} />
       <View style={styles.container}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={openModal}>
             <Image source={
                 require("../assets/delivery.png")
             } style={styles.avatar} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.headerText}>
+        <TouchableOpacity style={styles.headerText} >
           <Text style={styles.title}>Delivery . Now</Text>
           <View style={styles.subtitleContainer}>
           <Text style={styles.subtitle}>Dar es Salaam</Text>

@@ -20,7 +20,7 @@ const CustomHeader = () => {
                 require("../assets/delivery.png")
             } style={styles.avatar} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.headerText} >
+        <TouchableOpacity style={styles.headerText} onPress={openModal} >
           <Text style={styles.title}>Delivery . Now</Text>
           <View style={styles.subtitleContainer}>
           <Text style={styles.subtitle}>Dar es Salaam</Text>
